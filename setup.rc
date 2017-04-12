@@ -1,0 +1,16 @@
+# DO NOT EDIT - AUTO GENERATED FROM setup.conf
+
+cfg_ip_site1="127.0.0.1"
+cfg_ip_site2="127.0.0.1"
+cfg_ip_relay1="127.0.0.1"
+cfg_ip_relay2="127.0.0.1"
+cfg_ip_web1="127.0.0.1"
+cfg_ip_web2="127.0.0.1"
+cfg_ip_carbon1="127.0.0.1"
+cfg_ip_carbon2="127.0.0.1"
+cfg_ip_memcache1="127.0.0.1"
+cfg_ip_memcache2="127.0.0.1"
+cfg_graphite="127.0.0.1:2003"
+cfg_graphitehome="127.0.0.1"
+cfg_ganglia_server="45.79.71.93"
+cfg_keepalivepassword="some password here"
