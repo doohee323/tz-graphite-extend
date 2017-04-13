@@ -4,8 +4,8 @@
 require_relative './bootstrap'
 
 Vagrant.configure("2") do |config|
-
-#config.vm.box = "precise64"
+###for linode provider
+config.vm.box = "precise64"
   #for virtual box
    config.vm.provider :virtualbox do |provider, override|
         override.vm.box = "ubuntu/trusty64"
