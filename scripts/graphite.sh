@@ -100,14 +100,12 @@ echo "MEMCACHE_HOSTS = [\"$cfg_ip_memcache1:11211\", \"$cfg_ip_memcache2:11211\"
 ##########################################
 # install ganglia
 ##########################################
-#using this repo to install ganglia 3.4 as it allows for host name overwrites
-#add-apt-repository ppa:rufustfirefly/ganglia
 apt-get -y update
 apt-get install ganglia-monitor -y
 
 cp /vagrant/etc/ganglia/gmond.conf /etc/ganglia/gmond.conf
 sed -i "s/MONITORNODE/$cfg_ganglia_server/g" /etc/ganglia/gmond.conf
-sed -i "s/THISNODEID/$cfg_ganglia_nodes_prefix-graphite/g" /etc/ganglia/gmond.conf
+sed -i "s/THISNODEID/graphitehome/g" /etc/ganglia/gmond.conf
 /etc/init.d/ganglia-monitor restart
 
 ##########################################
