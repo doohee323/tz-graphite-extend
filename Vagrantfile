@@ -12,7 +12,7 @@ config.vm.box = "precise64"
         override.vm.provision "shell", :path => File.join(File.dirname(__FILE__),"scripts/graphite.sh")
         provider.customize ["modifyvm", :id, "--cpus", "2"]
         provider.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
-        provider.customize ["modifyvm", :id, "--memory", "1024"]
+        provider.customize ["modifyvm", :id, "--memory", "2048"]
       end
 end
 
