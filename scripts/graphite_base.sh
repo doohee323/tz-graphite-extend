@@ -3,12 +3,10 @@
 echo "Reading config...." >&2
 source /vagrant/setup.rc
 
-# Update and begin installing some utility tools
 apt-get update -y 
 apt-get upgrade -y 
 apt-get install python-software-properties libtool autoconf automake uuid-dev build-essential wget curl git monit -y
 
-#sudo rm -rf /var/lib/apt/lists/*
 apt-get autoremove -y
 apt-get install --assume-yes apache2 apache2-mpm-worker apache2-utils python-pip libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libffi-dev python-dev python3-minimal libapache2-mod-wsgi libaprutil1-ldap memcached python-cairo-dev python-django python-ldap python-memcache python-pysqlite2 sqlite3 python-rrd python-setuptools
 
@@ -29,7 +27,6 @@ git clone https://github.com/graphite-project/carbon.git
 cd carbon
 python setup.py install
 cd ..
-#rm -rf carbon
 
 ##########################################
 # install whisper
@@ -38,7 +35,6 @@ git clone https://github.com/graphite-project/whisper.git
 cd whisper
 python setup.py install
 cd ..
-#rm -rf whisper
 
 ##########################################
 # install graphite-web
@@ -89,9 +85,6 @@ rm /etc/apache2/sites-enabled/*
 cp /vagrant/etc/apache2/sites-enabled/graphite.wsgi /opt/graphite/conf
 cp /vagrant/etc/apache2/sites-enabled/graphite.conf /etc/apache2/sites-enabled
 
-cd ..
-#rm -rf graphite-web
-
 ##########################################
 # local_settings.py, settings.py
 ##########################################
@@ -132,7 +125,6 @@ chown -R graphite:graphite /opt/graphite
 ##########################################
 # apache2.conf
 ##########################################
-#enable headers
 a2enmod headers
 
 cat << 'EOF'  >> /etc/apache2/apache2.conf

@@ -102,7 +102,6 @@ echo "MEMCACHE_HOSTS = [\"$cfg_ip_memcache1:11211\", \"$cfg_ip_memcache2:11211\"
 ##########################################
 #using this repo to install ganglia 3.4 as it allows for host name overwrites
 #add-apt-repository ppa:rufustfirefly/ganglia
-# Update and begin installing some utility tools
 apt-get -y update
 apt-get install ganglia-monitor -y
 
@@ -145,4 +144,4 @@ service apache2 start
 #service apache2 restart
 service rsyslog restart
 
-echo "done!"
+exit 0
