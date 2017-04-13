@@ -4,7 +4,6 @@
 require_relative './bootstrap'
 
 Vagrant.configure("2") do |config|
-###for linode provider
 config.vm.box = "precise64"
   #for virtual box
    config.vm.provider :virtualbox do |provider, override|
