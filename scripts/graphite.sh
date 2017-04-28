@@ -105,7 +105,7 @@ apt-get install ganglia-monitor -y
 
 cp /vagrant/etc/ganglia/gmond.conf /etc/ganglia/gmond.conf
 sed -i "s/MONITORNODE/$cfg_ganglia_server/g" /etc/ganglia/gmond.conf
-sed -i "s/THISNODEID/graphitehome/g" /etc/ganglia/gmond.conf
+sed -i "s/THISNODEID/$cfg_graphitehome/g" /etc/ganglia/gmond.conf
 /etc/init.d/ganglia-monitor restart
 
 ##########################################
@@ -140,6 +140,5 @@ service haproxy start
 service postgresql start
 service apache2 start
 #service apache2 restart
-service rsyslog restart
 
 exit 0
